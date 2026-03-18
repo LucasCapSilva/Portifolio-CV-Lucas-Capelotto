@@ -47,6 +47,30 @@ export const cvData = {
       { name: "Python Automation", level: 95 },
       { name: "Web Scraping", level: 90 },
       { name: "Integração de APIs", level: 95 }
+    ],
+    curriculumDesign: [
+      { name: "Estruturação de Trilhas (LMS)", level: 95 },
+      { name: "Design Instrucional", level: 90 },
+      { name: "Criação de Materiais Didáticos", level: 95 },
+      { name: "Análise de Métricas Educacionais", level: 85 },
+      { name: "Gestão de OKRs", level: 85 },
+      { name: "Metodologias Ágeis", level: 90 }
+    ],
+    techInstruction: [
+      { name: "Mentoria Técnica", level: 95 },
+      { name: "Comunicação e Didática", level: 95 },
+      { name: "Code Review Educativo", level: 90 },
+      { name: "Aprendizagem Ativa", level: 90 },
+      { name: "Avaliação Contínua", level: 90 },
+      { name: "Capacitação de Instrutores", level: 85 }
+    ],
+    leadershipManagement: [
+      { name: "Liderança de Times Técnicos", level: 95 },
+      { name: "Treinamento de Equipes", level: 95 },
+      { name: "Coordenação de Processos Seletivos", level: 90 },
+      { name: "Gestão de Reuniões e Feedbacks", level: 90 },
+      { name: "Desenvolvimento de Talentos", level: 95 },
+      { name: "Alinhamento Estratégico", level: 85 }
     ]
   },
   experience: [

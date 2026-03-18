@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Server, Cpu, Database, BarChart3, Bot } from 'lucide-react';
+import { Code2, Server, Cpu, Database, BarChart3, Bot, BookOpen, GraduationCap, Users } from 'lucide-react';
 import { cvData } from '../data/cvData';
 
 const SkillBar = ({ name, level }: { name: string, level: number }) => (
@@ -52,9 +52,9 @@ export const Skills = () => {
           className="text-center max-w-3xl mx-auto mb-16"
         >
           <h2 className="text-sm font-bold tracking-widest text-brand-500 uppercase mb-3">Expertise</h2>
-          <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">Habilidades Técnicas</h3>
+          <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">Habilidades e Competências</h3>
           <p className="text-gray-500 dark:text-gray-400">
-            Domínio de tecnologias modernas para construir aplicações escaláveis, performáticas e seguras de ponta a ponta.
+            Domínio de tecnologias modernas para construir aplicações escaláveis e habilidades interpessoais para liderança e formação de equipes.
           </p>
         </motion.div>
 
@@ -62,9 +62,14 @@ export const Skills = () => {
           <SkillCategory title="Frontend" icon={Code2} skills={cvData.skills.frontend} />
           <SkillCategory title="Backend" icon={Server} skills={cvData.skills.backend} />
           <SkillCategory title="Arquitetura" icon={Cpu} skills={cvData.skills.architecture} />
+          
           <SkillCategory title="DevOps & Cloud" icon={Database} skills={cvData.skills.devops} />
           <SkillCategory title="Análise de Dados" icon={BarChart3} skills={cvData.skills.dataAnalytics} />
           <SkillCategory title="RPA e Automação" icon={Bot} skills={cvData.skills.rpaAutomation} />
+          
+          <SkillCategory title="Design de Currículo" icon={BookOpen} skills={cvData.skills.curriculumDesign} />
+          <SkillCategory title="Instrução e Mentoria" icon={GraduationCap} skills={cvData.skills.techInstruction} />
+          <SkillCategory title="Gestão e Liderança" icon={Users} skills={cvData.skills.leadershipManagement} />
         </div>
       </div>
     </section>
