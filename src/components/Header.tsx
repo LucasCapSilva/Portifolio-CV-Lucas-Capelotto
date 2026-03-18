@@ -1,11 +1,16 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Github, Linkedin, MessageCircle, FileDown } from 'lucide-react';
-import { cvData } from '../data/cvData';
+import { Menu, X, Moon, Sun, Github, Linkedin, MessageCircle, FileDown, Globe } from 'lucide-react';
+import { getCvData } from '../data/cvData';
+import { useLanguage } from '../contexts/LanguageContext';
+import type { Language } from '../data/translations';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
+  const { language, setLanguage, t } = useLanguage();
+  
+  const cvData = getCvData(language);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,12 +29,18 @@ export const Header = () => {
   }, [isDark]);
 
   const navItems = [
-    { label: 'Sobre', href: '#sobre' },
-    { label: 'Skills', href: '#skills' },
-    { label: 'Experiência', href: '#experiencia' },
-    { label: 'Projetos', href: '#projetos' },
-    { label: 'Contato', href: '#contato' },
+    { label: t.nav.about, href: '#sobre' },
+    { label: t.nav.skills, href: '#skills' },
+    { label: t.nav.experience, href: '#experiencia' },
+    { label: t.nav.projects, href: '#projetos' },
+    { label: t.nav.contact, href: '#contato' },
   ];
+
+  const toggleLanguage = () => {
+    const langs: Language[] = ['pt', 'en', 'es'];
+    const nextLang = langs[(langs.indexOf(language) + 1) % langs.length];
+    setLanguage(nextLang);
+  };
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-4' : 'bg-transparent py-6'}`}>
@@ -55,21 +66,27 @@ export const Header = () => {
               href="./Lucas_Capelotto_CV.pdf" 
               download="Lucas_Capelotto_CV.pdf"
               className="p-2 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors flex items-center gap-2" 
-              aria-label="Baixar Currículo"
+              aria-label={t.nav.downloadCV}
             >
               <FileDown size={18} />
-              <span className="text-sm font-medium hidden lg:block">Baixar CV</span>
+              <span className="text-sm font-medium hidden lg:block">{t.nav.downloadCV}</span>
             </a>
-            <button onClick={() => setIsDark(!isDark)} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Theme">
+            
+            <button onClick={toggleLanguage} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300" aria-label="Toggle Language">
+              <Globe size={18} />
+              <span className="uppercase">{language}</span>
+            </button>
+
+            <button onClick={() => setIsDark(!isDark)} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300" aria-label="Toggle Theme">
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
             <a href={`https://wa.me/${cvData.personalInfo.whatsapp}?text=Olá%20Lucas,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!`} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-green-100 dark:hover:bg-green-900/30 text-gray-700 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-500 transition-colors" aria-label="WhatsApp">
               <MessageCircle size={18} />
             </a>
-            <a href={cvData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors" aria-label="GitHub">
+            <a href={cvData.personalInfo.github} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300" aria-label="GitHub">
               <Github size={18} />
             </a>
-            <a href={cvData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors" aria-label="LinkedIn">
+            <a href={cvData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300" aria-label="LinkedIn">
               <Linkedin size={18} />
             </a>
           </div>
@@ -81,17 +98,22 @@ export const Header = () => {
             href="./Lucas_Capelotto_CV.pdf" 
             download="Lucas_Capelotto_CV.pdf"
             className="p-2 text-blue-600 dark:text-blue-500" 
-            aria-label="Baixar Currículo"
+            aria-label={t.nav.downloadCV}
           >
             <FileDown size={20} />
           </a>
           <a href={`https://wa.me/${cvData.personalInfo.whatsapp}?text=Olá%20Lucas,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!`} target="_blank" rel="noopener noreferrer" className="p-2 text-green-600 dark:text-green-500" aria-label="WhatsApp">
             <MessageCircle size={20} />
           </a>
-          <button onClick={() => setIsDark(!isDark)} className="p-2" aria-label="Toggle Theme">
+          
+          <button onClick={toggleLanguage} className="p-2 flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300" aria-label="Toggle Language">
+            <Globe size={20} />
+          </button>
+
+          <button onClick={() => setIsDark(!isDark)} className="p-2 text-gray-700 dark:text-gray-300" aria-label="Toggle Theme">
             {isDark ? <Sun size={20} /> : <Moon size={20} />}
           </button>
-          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2" aria-label="Menu">
+          <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} className="p-2 text-gray-700 dark:text-gray-300" aria-label="Menu">
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -105,7 +127,7 @@ export const Header = () => {
               <li key={item.label}>
                 <a 
                   href={item.href} 
-                  className="block text-lg font-medium"
+                  className="block text-lg font-medium text-gray-900 dark:text-gray-100"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {item.label}

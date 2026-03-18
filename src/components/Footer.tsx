@@ -1,7 +1,11 @@
 import { ArrowUp, Github } from 'lucide-react';
-import { cvData } from '../data/cvData';
+import { useLanguage } from '../contexts/LanguageContext';
+import { getCvData } from '../data/cvData';
 
 export const Footer = () => {
+  const { language, t } = useLanguage();
+  const cvData = getCvData(language);
+
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -15,7 +19,7 @@ export const Footer = () => {
               LCS.
             </a>
             <p className="text-sm text-gray-500 dark:text-gray-400">
-              © {new Date().getFullYear()} Lucas Capelotto. Todos os direitos reservados.
+              © {new Date().getFullYear()} {cvData.personalInfo.name}. {t.footer.rights}
             </p>
           </div>
           
@@ -27,7 +31,7 @@ export const Footer = () => {
               className="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-brand-500 dark:hover:text-brand-400 transition-colors"
             >
               <Github size={16} />
-              <span>Ver código fonte deste portfólio</span>
+              <span>{t.footer.viewSource}</span>
             </a>
 
             <button 

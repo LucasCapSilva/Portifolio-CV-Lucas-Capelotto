@@ -1,9 +1,13 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, Terminal, Database, Cloud } from 'lucide-react';
-import { cvData } from '../data/cvData';
+import { getCvData } from '../data/cvData';
 import perfilImg from '../assets/perfil.jpeg';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Hero = () => {
+  const { language, t } = useLanguage();
+  const cvData = getCvData(language);
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="inicio">
       {/* Background elements */}
@@ -25,11 +29,11 @@ export const Hero = () => {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
             </span>
-            Disponível para novos projetos
+            {t.hero.available}
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold font-heading mb-6 leading-tight">
-            Olá, eu sou <br />
+            {t.hero.hello} <br />
             <span className="text-gradient">{cvData.personalInfo.name}</span>
           </h1>
           
@@ -38,8 +42,7 @@ export const Hero = () => {
           </h2>
           
           <p className="text-lg text-gray-500 dark:text-gray-400 mb-8 max-w-xl leading-relaxed">
-            Construindo soluções robustas, escaláveis e de alta performance. 
-            Especialista em arquitetura de software e desenvolvimento ponta a ponta com +7 anos de experiência.
+            {t.hero.description}
           </p>
 
           <div className="flex flex-wrap items-center gap-4">
@@ -47,7 +50,7 @@ export const Hero = () => {
               href="#projetos"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-lg transition-all duration-300 shadow-[0_0_20px_var(--color-brand-glow)] hover:shadow-[0_0_30px_var(--color-brand-glow)] hover:-translate-y-1"
             >
-              Ver Projetos
+              {t.hero.viewProjects}
               <ArrowRight size={18} />
             </a>
             
@@ -57,22 +60,22 @@ export const Hero = () => {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white/5 hover:bg-white/10 dark:bg-gray-800/50 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 font-medium rounded-lg transition-all duration-300 hover:-translate-y-1"
             >
-              Falar Comigo
+              {t.hero.contactMe}
             </a>
           </div>
 
           <div className="mt-12 flex items-center gap-8 text-sm text-gray-500 dark:text-gray-400 font-medium">
             <div className="flex items-center gap-2">
               <Terminal className="text-brand-500" size={20} />
-              <span>Frontend Moderno</span>
+              <span>{t.hero.frontend}</span>
             </div>
             <div className="flex items-center gap-2">
               <Database className="text-purple-500" size={20} />
-              <span>Backend Escalável</span>
+              <span>{t.hero.backend}</span>
             </div>
             <div className="flex items-center gap-2">
               <Cloud className="text-indigo-500" size={20} />
-              <span>Cloud & DevOps</span>
+              <span>{t.hero.cloud}</span>
             </div>
           </div>
         </motion.div>

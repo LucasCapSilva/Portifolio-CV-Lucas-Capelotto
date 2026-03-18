@@ -1,8 +1,12 @@
 import { motion } from 'framer-motion';
 import { Briefcase, Calendar, CheckCircle2 } from 'lucide-react';
-import { cvData } from '../data/cvData';
+import { getCvData } from '../data/cvData';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Experience = () => {
+  const { language, t } = useLanguage();
+  const cvData = getCvData(language);
+
   return (
     <section className="py-24 relative bg-gray-100/50 dark:bg-white/[0.02]" id="experiencia">
       <div className="container mx-auto px-6 max-w-4xl">
@@ -12,8 +16,8 @@ export const Experience = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-sm font-bold tracking-widest text-brand-500 uppercase mb-3">Trajetória</h2>
-          <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">Experiência Profissional</h3>
+          <h2 className="text-sm font-bold tracking-widest text-brand-500 uppercase mb-3">{t.experience.title}</h2>
+          <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">{t.experience.heading}</h3>
         </motion.div>
 
         <div className="relative border-l border-gray-300 dark:border-gray-700 ml-4 md:ml-0">

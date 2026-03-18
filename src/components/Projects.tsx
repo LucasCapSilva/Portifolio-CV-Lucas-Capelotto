@@ -1,7 +1,11 @@
 import { motion } from 'framer-motion';
-import { cvData } from '../data/cvData';
+import { getCvData } from '../data/cvData';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Projects = () => {
+  const { language, t } = useLanguage();
+  const cvData = getCvData(language);
+
   return (
     <section className="py-24 relative" id="projetos">
       {/* Background decoration */}
@@ -14,8 +18,8 @@ export const Projects = () => {
           viewport={{ once: true }}
           className="mb-16"
         >
-          <h2 className="text-sm font-bold tracking-widest text-brand-500 uppercase mb-3">Portfólio</h2>
-          <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">Projetos em Destaque desenvolvidos para clientes</h3>
+          <h2 className="text-sm font-bold tracking-widest text-brand-500 uppercase mb-3">{t.projects.title}</h2>
+          <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">{t.projects.heading}</h3>
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
@@ -44,7 +48,7 @@ export const Projects = () => {
                 </p>
                 
                 <div className="mb-6">
-                  <span className="text-xs font-semibold text-brand-500 uppercase block mb-2">Resultados:</span>
+                  <span className="text-xs font-semibold text-brand-500 uppercase block mb-2">{t.projects.results}</span>
                   <p className="text-sm font-medium border-l-2 border-brand-500 pl-3 py-1">
                     {project.results}
                   </p>
@@ -57,17 +61,6 @@ export const Projects = () => {
                     </span>
                   ))}
                 </div>
-
-                {/* <div className="flex items-center gap-4 mt-auto pt-4 border-t border-gray-100 dark:border-white/10">
-                  <a href={project.link} className="flex items-center gap-2 text-sm font-medium hover:text-brand-500 transition-colors">
-                    <ExternalLink size={16} />
-                    Ver Detalhes
-                  </a>
-                  <a href={project.link} className="flex items-center gap-2 text-sm font-medium hover:text-brand-500 transition-colors">
-                    <Github size={16} />
-                    Código
-                  </a>
-                </div> */}
               </div>
             </motion.div>
           ))}

@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Mail, MapPin, Send, Github, Linkedin, Loader2, MessageCircle } from 'lucide-react';
-import { cvData } from '../data/cvData';
+import { getCvData } from '../data/cvData';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Contact = () => {
+  const { language, t } = useLanguage();
+  const cvData = getCvData(language);
+
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -28,10 +32,10 @@ export const Contact = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-sm font-bold tracking-widest text-brand-500 uppercase mb-3">Contato</h2>
-            <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">Vamos construir algo incrível juntos?</h3>
+            <h2 className="text-sm font-bold tracking-widest text-brand-500 uppercase mb-3">{t.contact.title}</h2>
+            <h3 className="text-3xl md:text-4xl font-heading font-bold mb-6">{t.contact.heading}</h3>
             <p className="text-gray-500 dark:text-gray-400 mb-8 leading-relaxed">
-              Estou sempre aberto a discutir projetos interessantes, oportunidades de consultoria ou simplesmente trocar ideias sobre arquitetura de software e tecnologia.
+              {t.contact.description}
             </p>
 
             <div className="space-y-6 mb-12">
@@ -40,7 +44,7 @@ export const Contact = () => {
                   <Mail size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">E-mail</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{t.contact.email}</p>
                   <a href={`mailto:${cvData.personalInfo.email}`} className="font-medium hover:text-brand-500 transition-colors">
                     {cvData.personalInfo.email}
                   </a>
@@ -52,7 +56,7 @@ export const Contact = () => {
                   <MapPin size={20} />
                 </div>
                 <div>
-                  <p className="text-sm text-gray-500 dark:text-gray-400">Localização</p>
+                  <p className="text-sm text-gray-500 dark:text-gray-400">{t.contact.location}</p>
                   <p className="font-medium">{cvData.personalInfo.location}</p>
                 </div>
               </div>
@@ -61,7 +65,7 @@ export const Contact = () => {
             <div className="flex flex-wrap gap-4">
               <a href={`https://wa.me/${cvData.personalInfo.whatsapp}?text=Olá%20Lucas,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!`} target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-xl hover:bg-white/20 dark:hover:bg-white/10 transition-colors group flex items-center gap-2">
                 <MessageCircle size={24} className="group-hover:text-green-500 transition-colors" />
-                <span className="font-medium text-sm">WhatsApp</span>
+                <span className="font-medium text-sm">{t.contact.whatsapp}</span>
               </a>
               <a href={cvData.personalInfo.linkedin} target="_blank" rel="noopener noreferrer" className="p-3 glass rounded-xl hover:bg-white/20 dark:hover:bg-white/10 transition-colors group">
                 <Linkedin size={24} className="group-hover:text-brand-500 transition-colors" />
@@ -80,35 +84,35 @@ export const Contact = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">Nome</label>
+                <label htmlFor="name" className="block text-sm font-medium mb-2">{t.contact.formName}</label>
                 <input 
                   type="text" 
                   id="name" 
                   required
                   className="w-full bg-gray-50 dark:bg-[#0B0F19] border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
-                  placeholder="Seu nome"
+                  placeholder={t.contact.formName}
                 />
               </div>
               
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">E-mail</label>
+                <label htmlFor="email" className="block text-sm font-medium mb-2">{t.contact.formEmail}</label>
                 <input 
                   type="email" 
                   id="email" 
                   required
                   className="w-full bg-gray-50 dark:bg-[#0B0F19] border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all"
-                  placeholder="seu@email.com"
+                  placeholder={t.contact.formEmail}
                 />
               </div>
               
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">Mensagem</label>
+                <label htmlFor="message" className="block text-sm font-medium mb-2">{t.contact.formMessage}</label>
                 <textarea 
                   id="message" 
                   rows={4}
                   required
                   className="w-full bg-gray-50 dark:bg-[#0B0F19] border border-gray-200 dark:border-gray-800 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none"
-                  placeholder="Como posso ajudar?"
+                  placeholder={t.contact.formPlaceholder}
                 ></textarea>
               </div>
 
@@ -120,14 +124,14 @@ export const Contact = () => {
                 {isSubmitting ? (
                   <>
                     <Loader2 size={18} className="animate-spin" />
-                    Enviando...
+                    {t.contact.formSending}
                   </>
                 ) : isSubmitted ? (
-                  <>Mensagem Enviada!</>
+                  <>{t.contact.formSent}</>
                 ) : (
                   <>
                     <Send size={18} />
-                    Enviar Mensagem
+                    {t.contact.formSend}
                   </>
                 )}
               </button>
