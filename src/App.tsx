@@ -9,7 +9,7 @@ import { Footer } from './components/Footer';
 
 function App() {
   return (
-    <div className="relative selection:bg-brand-500/30 selection:text-brand-900 dark:selection:text-brand-100">
+    <div className="relative min-h-screen bg-gray-50 text-gray-900 dark:bg-[#0B0F19] dark:text-gray-100 transition-colors duration-300 selection:bg-brand-500/30 selection:text-brand-900 dark:selection:text-brand-100">
       <Header />
       <main>
         <Hero />
