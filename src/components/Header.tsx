@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Github, Linkedin, MessageCircle } from 'lucide-react';
+import { Menu, X, Moon, Sun, Github, Linkedin, MessageCircle, FileDown } from 'lucide-react';
 import { cvData } from '../data/cvData';
+import { generatePDF } from '../utils/generatePDF';
 
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -51,6 +52,10 @@ export const Header = () => {
           </ul>
           
           <div className="flex items-center gap-4 border-l border-gray-300 dark:border-gray-700 pl-4">
+            <button onClick={generatePDF} className="p-2 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors flex items-center gap-2" aria-label="Baixar Currículo">
+              <FileDown size={18} />
+              <span className="text-sm font-medium hidden lg:block">Baixar CV</span>
+            </button>
             <button onClick={() => setIsDark(!isDark)} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors" aria-label="Toggle Theme">
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
             </button>
@@ -68,6 +73,9 @@ export const Header = () => {
 
         {/* Mobile Toggle & Icons */}
         <div className="md:hidden flex items-center gap-3">
+          <button onClick={generatePDF} className="p-2 text-blue-600 dark:text-blue-500" aria-label="Baixar Currículo">
+            <FileDown size={20} />
+          </button>
           <a href={`https://wa.me/${cvData.personalInfo.whatsapp}?text=Olá%20Lucas,%20vi%20seu%20portfólio%20e%20gostaria%20de%20conversar!`} target="_blank" rel="noopener noreferrer" className="p-2 text-green-600 dark:text-green-500" aria-label="WhatsApp">
             <MessageCircle size={20} />
           </a>
