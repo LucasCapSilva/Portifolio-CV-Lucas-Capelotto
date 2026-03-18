@@ -230,7 +230,7 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
           techs: ["Node.js", "NestJS", "React", "AWS", "Redis"],
           results: "Reduziu latência de processamento de dados em 50%",
-          link: "#"
+          link: "https://portal-financeiro-corretagem-white.vercel.app"
         }
       ]
     },
@@ -462,7 +462,7 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
           techs: ["Node.js", "NestJS", "React", "AWS", "Redis"],
           results: "Reduced data processing latency by 50%",
-          link: "#"
+          link: "https://portal-financeiro-corretagem-white.vercel.app"
         }
       ]
     },
@@ -694,7 +694,7 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
           techs: ["Node.js", "NestJS", "React", "AWS", "Redis"],
           results: "Redujo la latencia de procesamiento de datos en un 50%",
-          link: "#"
+          link: "https://portal-financeiro-corretagem-white.vercel.app"
         }
       ]
     }
