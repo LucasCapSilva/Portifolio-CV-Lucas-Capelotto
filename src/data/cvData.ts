@@ -7,6 +7,7 @@ export const cvData = {
     whatsapp: "5511932147070",
     linkedin: "https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a",
     github: "https://github.com/LucasCapSilva",
+    portfolioGithub: "https://github.com/LucasCapSilva/Portifolio-CV-Lucas-Capelotto",
     summary: "+7 anos de experiência em desenvolvimento de software, liderança técnica, arquitetura de sistemas e desenvolvimento full stack. Especialista em criação de aplicações web, mobile e desktop utilizando microsserviços, com forte vivência em ambientes educacionais, financeiros e corporativos."
   },
   skills: {

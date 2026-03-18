@@ -8,6 +8,10 @@
   [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a)
   [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/LucasCapSilva)
   [![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/5511932147070?text=Ol%C3%A1%20Lucas,%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar!)
+  
+  <br />
+  
+  [![Vercel Deploy](https://img.shields.io/badge/Acessar_Portfólio_Online-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://portifolio-cv-lucas-capelotto.vercel.app/)
 </div>
 
 ---
