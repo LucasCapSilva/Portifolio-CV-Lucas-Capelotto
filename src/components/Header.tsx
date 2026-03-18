@@ -52,7 +52,7 @@ export const Header = () => {
           
           <div className="flex items-center gap-4 border-l border-gray-300 dark:border-gray-700 pl-4">
             <a 
-              href="/Lucas_Capelotto_CV.pdf" 
+              href="./Lucas_Capelotto_CV.pdf" 
               download="Lucas_Capelotto_CV.pdf"
               className="p-2 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/30 text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-500 transition-colors flex items-center gap-2" 
               aria-label="Baixar Currículo"
@@ -78,7 +78,7 @@ export const Header = () => {
         {/* Mobile Toggle & Icons */}
         <div className="md:hidden flex items-center gap-3">
           <a 
-            href="/Lucas_Capelotto_CV.pdf" 
+            href="./Lucas_Capelotto_CV.pdf" 
             download="Lucas_Capelotto_CV.pdf"
             className="p-2 text-blue-600 dark:text-blue-500" 
             aria-label="Baixar Currículo"
