@@ -1,6 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Download, Terminal, Database, Cloud } from 'lucide-react';
+import { ArrowRight, Terminal, Database, Cloud } from 'lucide-react';
 import { cvData } from '../data/cvData';
 import perfilImg from '../assets/perfil.jpeg';
 

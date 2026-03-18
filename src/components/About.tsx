@@ -1,7 +1,5 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Terminal, Lightbulb, Users, Rocket } from 'lucide-react';
-import { cvData } from '../data/cvData';
 
 export const About = () => {
   const highlights = [

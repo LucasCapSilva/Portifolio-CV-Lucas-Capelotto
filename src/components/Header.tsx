@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun, Github, Linkedin, MessageCircle } from 'lucide-react';
 import { cvData } from '../data/cvData';
 

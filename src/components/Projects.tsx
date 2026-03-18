@@ -1,6 +1,4 @@
-import React from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
 import { cvData } from '../data/cvData';
 
 export const Projects = () => {

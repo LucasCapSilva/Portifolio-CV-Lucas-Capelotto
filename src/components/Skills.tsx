@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 import { Code2, Server, Cpu, Database, BarChart3, Bot } from 'lucide-react';
 import { cvData } from '../data/cvData';
