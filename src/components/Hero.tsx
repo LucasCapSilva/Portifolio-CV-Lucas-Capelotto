@@ -4,17 +4,6 @@ import { cvData } from '../data/cvData';
 import perfilImg from '../assets/perfil.jpeg';
 
 export const Hero = () => {
-  const techStack = [
-    { name: "React", color: "text-blue-500", bg: "bg-blue-500/20", short: "Re" },
-    { name: "Node.js", color: "text-green-500", bg: "bg-green-500/20", short: "No" },
-    { name: "C#", color: "text-purple-500", bg: "bg-purple-500/20", short: "C#" },
-    { name: "AWS", color: "text-orange-500", bg: "bg-orange-500/20", short: "AW" },
-    { name: "Docker", color: "text-blue-400", bg: "bg-blue-400/20", short: "Do" },
-    { name: "Python", color: "text-yellow-500", bg: "bg-yellow-500/20", short: "Py" },
-    { name: "TypeScript", color: "text-blue-600", bg: "bg-blue-600/20", short: "TS" },
-    { name: "SQL", color: "text-gray-500", bg: "bg-gray-500/20", short: "SQ" },
-  ];
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20" id="inicio">
       {/* Background elements */}
@@ -107,33 +96,32 @@ export const Hero = () => {
               />
             </div>
 
-            {/* Orbiting Tech Stack */}
+            {/* Floating Badges */}
             <motion.div 
-              animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 z-20 pointer-events-none"
+              animate={{ y: [0, -10, 0] }}
+              transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-4 -right-4 glass px-4 py-2 rounded-xl flex items-center gap-2 z-20 shadow-lg"
             >
-              {techStack.map((tech, index) => {
-                const angle = (index * 360) / techStack.length;
-                return (
-                  <div
-                    key={index}
-                    className="absolute top-1/2 left-1/2 w-12 h-12 -ml-6 -mt-6"
-                    style={{
-                      transform: `rotate(${angle}deg) translate(11rem) rotate(-${angle}deg)`,
-                    }}
-                  >
-                    <motion.div 
-                      animate={{ rotate: -360 }}
-                      transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                      className={`w-full h-full glass rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition-transform cursor-default pointer-events-auto ${tech.bg}`}
-                      title={tech.name}
-                    >
-                      <span className={`font-bold text-xs ${tech.color}`}>{tech.short}</span>
-                    </motion.div>
-                  </div>
-                );
-              })}
+              <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500 font-bold">R</div>
+              <span className="font-medium text-sm">React</span>
+            </motion.div>
+
+            <motion.div 
+              animate={{ y: [0, 10, 0] }}
+              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+              className="absolute bottom-10 -left-8 glass px-4 py-2 rounded-xl flex items-center gap-2 z-20 shadow-lg"
+            >
+              <div className="w-8 h-8 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 font-bold">N</div>
+              <span className="font-medium text-sm">Node.js</span>
+            </motion.div>
+            
+            <motion.div 
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+              className="absolute -bottom-4 right-10 glass px-4 py-2 rounded-xl flex items-center gap-2 z-20 shadow-lg"
+            >
+              <div className="w-8 h-8 rounded-full bg-purple-500/20 flex items-center justify-center text-purple-500 font-bold">C#</div>
+              <span className="font-medium text-sm">.NET Core</span>
             </motion.div>
           </div>
         </motion.div>
