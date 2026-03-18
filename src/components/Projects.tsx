@@ -1,10 +1,13 @@
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { X, ExternalLink, Info } from 'lucide-react';
 import { getCvData } from '../data/cvData';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Projects = () => {
   const { language, t } = useLanguage();
   const cvData = getCvData(language);
+  const [selectedProject, setSelectedProject] = useState<typeof cvData.projects[0] | null>(null);
 
   return (
     <section className="py-24 relative" id="projetos">
@@ -61,11 +64,120 @@ export const Projects = () => {
                     </span>
                   ))}
                 </div>
+
+                <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-200 dark:border-gray-800">
+                  {'longDescription' in project && (
+                    <button 
+                      onClick={() => setSelectedProject(project as typeof cvData.projects[0])}
+                      className="flex items-center justify-center gap-2 flex-1 py-2 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium text-sm transition-colors"
+                    >
+                      <Info size={16} />
+                      {t.projects.seeMore}
+                    </button>
+                  )}
+                  {project.link !== '#' && (
+                    <a 
+                      href={project.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 flex-1 py-2 px-4 rounded-lg bg-brand-500/10 hover:bg-brand-500/20 text-brand-600 dark:text-brand-400 font-medium text-sm transition-colors"
+                    >
+                      <ExternalLink size={16} />
+                      {t.projects.accessApp}
+                    </a>
+                  )}
+                </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
+
+      <AnimatePresence>
+        {selectedProject && (
+          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6">
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setSelectedProject(null)}
+              className="absolute inset-0 bg-gray-900/80 backdrop-blur-sm"
+            />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95, y: 20 }}
+              animate={{ opacity: 1, scale: 1, y: 0 }}
+              exit={{ opacity: 0, scale: 0.95, y: 20 }}
+              className="relative w-full max-w-2xl max-h-[90vh] overflow-y-auto glass rounded-2xl border border-gray-200 dark:border-white/10 shadow-2xl flex flex-col"
+            >
+              <div className="sticky top-0 z-10 flex justify-between items-center p-4 sm:p-6 border-b border-gray-200 dark:border-gray-800 bg-white/80 dark:bg-gray-900/80 backdrop-blur-md">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white pr-8">
+                  {selectedProject.title}
+                </h3>
+                <button 
+                  onClick={() => setSelectedProject(null)}
+                  className="absolute right-4 sm:right-6 p-2 rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-500 dark:text-gray-400 transition-colors"
+                  aria-label={t.projects.close}
+                >
+                  <X size={20} />
+                </button>
+              </div>
+
+              <div className="p-4 sm:p-6">
+                <img 
+                  src={selectedProject.image} 
+                  alt={selectedProject.title} 
+                  className="w-full h-48 sm:h-64 object-cover rounded-xl mb-6 border border-gray-200 dark:border-gray-800"
+                />
+
+                <div className="space-y-6">
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Visão Geral</h4>
+                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                      {'longDescription' in selectedProject 
+                        ? (selectedProject as any).longDescription 
+                        : selectedProject.description}
+                    </p>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Tecnologias</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {selectedProject.techs.map((tech, i) => (
+                        <span key={i} className="px-3 py-1.5 bg-gray-100 dark:bg-gray-800 rounded-lg text-sm font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
+                          {tech}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div>
+                    <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{t.projects.results}</h4>
+                    <div className="p-4 bg-brand-500/10 border border-brand-500/20 rounded-xl">
+                      <p className="font-medium text-brand-700 dark:text-brand-300">
+                        {selectedProject.results}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {selectedProject.link !== '#' && (
+                <div className="sticky bottom-0 p-4 sm:p-6 border-t border-gray-200 dark:border-gray-800 bg-gray-50/80 dark:bg-gray-900/80 backdrop-blur-md flex justify-end">
+                  <a 
+                    href={selectedProject.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-3 bg-brand-600 hover:bg-brand-500 text-white font-medium rounded-xl transition-all duration-300 shadow-lg hover:shadow-brand-500/25"
+                  >
+                    {t.projects.accessApp}
+                    <ExternalLink size={18} />
+                  </a>
+                </div>
+              )}
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </section>
   );
 };

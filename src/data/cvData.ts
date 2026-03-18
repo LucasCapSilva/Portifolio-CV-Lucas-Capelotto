@@ -227,6 +227,7 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Portal Financeiro & Corretagem",
           description: "Aplicação robusta para corretoras, fornecendo análises em tempo real, integração de dados complexos e painéis de controle interativos de alta performance.",
+          longDescription: "Uma aplicação web White-Label de alta performance para o mercado financeiro, desenvolvida para oferecer uma experiência de SaaS Financeiro premium. O sistema combina dados em tempo real, simulação de trading e gestão de carteira em uma interface sofisticada e totalmente personalizável. Permite personalização instantânea de cores da marca, suporte a Dark/Light Mode e integração híbrida de dados de mercado (Alpha Vantage + Mocks).",
           image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
           techs: ["Node.js", "NestJS", "React", "AWS", "Redis"],
           results: "Reduziu latência de processamento de dados em 50%",
@@ -459,6 +460,7 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Financial & Brokerage Portal",
           description: "Robust application for brokerages, providing real-time analytics, complex data integration, and high-performance interactive dashboards.",
+          longDescription: "A high-performance White-Label web application for the financial market, developed to offer a premium Financial SaaS experience. The system combines real-time data, trading simulation, and portfolio management in a sophisticated and fully customizable interface. It allows instant brand color customization, Dark/Light Mode support, and hybrid market data integration (Alpha Vantage + Mocks).",
           image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
           techs: ["Node.js", "NestJS", "React", "AWS", "Redis"],
           results: "Reduced data processing latency by 50%",
@@ -691,6 +693,7 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Portal Financiero y Corretaje",
           description: "Aplicación robusta para corredurías, que proporciona análisis en tiempo real, integración de datos complejos y paneles de control interactivos de alto rendimiento.",
+          longDescription: "Una aplicación web White-Label de alto rendimiento para el mercado financiero, desarrollada para ofrecer una experiencia premium de SaaS Financiero. El sistema combina datos en tiempo real, simulación de trading y gestión de cartera en una interfaz sofisticada y totalmente personalizable. Permite la personalización instantánea de los colores de la marca, soporte para Modo Oscuro/Claro e integración híbrida de datos de mercado (Alpha Vantage + Mocks).",
           image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?q=80&w=800&auto=format&fit=crop",
           techs: ["Node.js", "NestJS", "React", "AWS", "Redis"],
           results: "Redujo la latencia de procesamiento de datos en un 50%",

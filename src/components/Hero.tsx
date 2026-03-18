@@ -107,7 +107,7 @@ export const Hero = () => {
             <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-brand-500/30 to-purple-600/30 blur-3xl animate-pulse"></div>
             
             {/* Main Image Container */}
-            <div className="relative w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-2xl overflow-hidden z-10 bg-gray-100 dark:bg-gray-900">
+            <div className="relative w-full h-full rounded-full border-4 border-white dark:border-gray-800 shadow-2xl overflow-hidden z-0 bg-gray-100 dark:bg-gray-900">
               <img 
                 src={perfilImg} 
                 alt={cvData.personalInfo.name} 
@@ -116,17 +116,17 @@ export const Hero = () => {
             </div>
 
             {/* Floating Badges */}
-            <FloatingBadge className="top-10 left-0 md:-left-10" delay={0}>
+            <FloatingBadge className="top-10 left-0 md:-left-10 z-20" delay={0}>
               <span className="w-3 h-3 rounded-full bg-[#61DAFB]"></span>
               <span className="font-bold text-gray-800 dark:text-white">React</span>
             </FloatingBadge>
 
-            <FloatingBadge className="bottom-20 right-0 md:-right-4" delay={1.5}>
+            <FloatingBadge className="bottom-20 right-0 md:-right-4 z-20" delay={1.5}>
               <span className="w-3 h-3 rounded-full bg-[#339933]"></span>
               <span className="font-bold text-gray-800 dark:text-white">Node.js</span>
             </FloatingBadge>
 
-            <FloatingBadge className="bottom-0 left-10 md:left-0" delay={2.5}>
+            <FloatingBadge className="bottom-0 left-10 md:left-0 z-20" delay={2.5}>
               <span className="w-3 h-3 rounded-full bg-[#512BD4]"></span>
               <span className="font-bold text-gray-800 dark:text-white">.NET Core</span>
             </FloatingBadge>

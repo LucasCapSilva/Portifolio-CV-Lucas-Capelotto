@@ -58,7 +58,10 @@ export const translations = {
     projects: {
       title: 'Portfólio',
       heading: 'Projetos em Destaque desenvolvidos para clientes',
-      results: 'Resultados:'
+      results: 'Resultados:',
+      seeMore: 'Ver mais',
+      accessApp: 'Acessar Aplicação',
+      close: 'Fechar'
     },
     contact: {
       title: 'Contato',
@@ -138,7 +141,10 @@ export const translations = {
     projects: {
       title: 'Portfolio',
       heading: 'Featured Projects developed for clients',
-      results: 'Results:'
+      results: 'Results:',
+      seeMore: 'See more',
+      accessApp: 'Access App',
+      close: 'Close'
     },
     contact: {
       title: 'Contact',
@@ -218,7 +224,10 @@ export const translations = {
     projects: {
       title: 'Portafolio',
       heading: 'Proyectos Destacados desarrollados para clientes',
-      results: 'Resultados:'
+      results: 'Resultados:',
+      seeMore: 'Ver más',
+      accessApp: 'Acceder a la App',
+      close: 'Cerrar'
     },
     contact: {
       title: 'Contacto',
