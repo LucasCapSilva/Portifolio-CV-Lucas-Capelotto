@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { Menu, X, Moon, Sun, Github, Linkedin, MessageCircle, FileDown, Globe } from 'lucide-react';
+import { useState, useEffect, useRef } from 'react';
+import { Menu, X, Moon, Sun, Github, Linkedin, MessageCircle, FileDown, Globe, ChevronDown } from 'lucide-react';
 import { getCvData } from '../data/cvData';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../data/translations';
@@ -7,8 +7,10 @@ import type { Language } from '../data/translations';
 export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
   const [isDark, setIsDark] = useState(true);
   const { language, setLanguage, t } = useLanguage();
+  const langMenuRef = useRef<HTMLDivElement>(null);
   
   const cvData = getCvData(language);
 
@@ -18,6 +20,17 @@ export const Header = () => {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (langMenuRef.current && !langMenuRef.current.contains(event.target as Node)) {
+        setIsLangMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   useEffect(() => {
@@ -36,10 +49,15 @@ export const Header = () => {
     { label: t.nav.contact, href: '#contato' },
   ];
 
-  const toggleLanguage = () => {
-    const langs: Language[] = ['pt', 'en', 'es'];
-    const nextLang = langs[(langs.indexOf(language) + 1) % langs.length];
-    setLanguage(nextLang);
+  const languages: { code: Language; label: string }[] = [
+    { code: 'pt', label: 'Português' },
+    { code: 'en', label: 'English' },
+    { code: 'es', label: 'Español' },
+  ];
+
+  const handleLanguageSelect = (code: Language) => {
+    setLanguage(code);
+    setIsLangMenuOpen(false);
   };
 
   return (
@@ -72,10 +90,31 @@ export const Header = () => {
               <span className="text-sm font-medium hidden lg:block">{t.nav.downloadCV}</span>
             </a>
             
-            <button onClick={toggleLanguage} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300" aria-label="Toggle Language">
-              <Globe size={18} />
-              <span className="uppercase">{language}</span>
-            </button>
+            <div className="relative" ref={langMenuRef}>
+              <button 
+                onClick={() => setIsLangMenuOpen(!isLangMenuOpen)} 
+                className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300" 
+                aria-label="Toggle Language"
+              >
+                <Globe size={18} />
+                <span className="uppercase">{language}</span>
+                <ChevronDown size={14} className={`transition-transform ${isLangMenuOpen ? 'rotate-180' : ''}`} />
+              </button>
+              
+              {isLangMenuOpen && (
+                <div className="absolute top-full right-0 mt-2 w-32 glass rounded-xl shadow-lg overflow-hidden py-1 border border-gray-200 dark:border-white/10">
+                  {languages.map((lang) => (
+                    <button
+                      key={lang.code}
+                      onClick={() => handleLanguageSelect(lang.code)}
+                      className={`w-full text-left px-4 py-2 text-sm hover:bg-brand-500/10 transition-colors ${language === lang.code ? 'text-brand-500 font-bold' : 'text-gray-700 dark:text-gray-300'}`}
+                    >
+                      {lang.label}
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
 
             <button onClick={() => setIsDark(!isDark)} className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors text-gray-700 dark:text-gray-300" aria-label="Toggle Theme">
               {isDark ? <Sun size={18} /> : <Moon size={18} />}
@@ -106,7 +145,10 @@ export const Header = () => {
             <MessageCircle size={20} />
           </a>
           
-          <button onClick={toggleLanguage} className="p-2 flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300" aria-label="Toggle Language">
+          <button onClick={() => {
+            const nextLang = languages[(languages.findIndex(l => l.code === language) + 1) % languages.length].code;
+            setLanguage(nextLang);
+          }} className="p-2 flex items-center gap-1 text-sm font-medium text-gray-700 dark:text-gray-300" aria-label="Toggle Language">
             <Globe size={20} />
           </button>
 
@@ -134,6 +176,22 @@ export const Header = () => {
                 </a>
               </li>
             ))}
+            <li className="pt-4 mt-2 border-t border-gray-200 dark:border-gray-800">
+              <div className="flex gap-2">
+                {languages.map((lang) => (
+                  <button
+                    key={lang.code}
+                    onClick={() => {
+                      handleLanguageSelect(lang.code);
+                      setIsMobileMenuOpen(false);
+                    }}
+                    className={`flex-1 py-2 text-sm rounded-lg transition-colors border ${language === lang.code ? 'bg-brand-500/10 text-brand-500 border-brand-500/30 font-bold' : 'border-gray-200 dark:border-gray-700 text-gray-700 dark:text-gray-300'}`}
+                  >
+                    {lang.code.toUpperCase()}
+                  </button>
+                ))}
+              </div>
+            </li>
           </ul>
         </div>
       )}
