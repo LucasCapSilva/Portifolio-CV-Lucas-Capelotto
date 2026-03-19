@@ -225,7 +225,7 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
           techs: ["C#", "ASP.NET Core", "React", "AWS SQS", "SQL Server"],
           results: "Aumentou a eficiência operacional em 35%",
-          link: "https://sistema-erp-imobili-rio.vercel.app/clientes"
+          link: "https://sistema-erp-imobili-rio.vercel.app"
         },
         {
           title: "Portal Financeiro & Corretagem",
@@ -461,7 +461,7 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
           techs: ["C#", "ASP.NET Core", "React", "AWS SQS", "SQL Server"],
           results: "Increased operational efficiency by 35%",
-          link: "https://sistema-erp-imobili-rio.vercel.app/clientes"
+          link: "https://sistema-erp-imobili-rio.vercel.app"
         },
         {
           title: "Financial & Brokerage Portal",
@@ -697,7 +697,7 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
           techs: ["C#", "ASP.NET Core", "React", "AWS SQS", "SQL Server"],
           results: "Aumentó la eficiencia operativa en un 35%",
-          link: "https://sistema-erp-imobili-rio.vercel.app/clientes"
+          link: "https://sistema-erp-imobili-rio.vercel.app"
         },
         {
           title: "Portal Financiero y Corretaje",
