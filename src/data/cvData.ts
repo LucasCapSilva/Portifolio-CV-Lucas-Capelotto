@@ -221,10 +221,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Sistema ERP Imobiliário",
           description: "Plataforma de gestão para o setor imobiliário focada em performance e eficiência. Integração com múltiplos serviços de terceiros e mensageria para processamento assíncrono.",
+          longDescription: "Sistema ERP completo para imobiliárias, cobrindo gestão de imóveis, propostas comerciais, funil de vendas e acompanhamento operacional em tempo real. A solução integra serviços de terceiros e mensageria assíncrona para manter alta performance em processos críticos, com foco em produtividade e escalabilidade para equipes comerciais e administrativas.",
           image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
           techs: ["C#", "ASP.NET Core", "React", "AWS SQS", "SQL Server"],
           results: "Aumentou a eficiência operacional em 35%",
-          link: "#"
+          link: "https://sistema-erp-imobili-rio.vercel.app/clientes"
         },
         {
           title: "Portal Financeiro & Corretagem",
@@ -456,10 +457,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Real Estate ERP System",
           description: "Management platform for the real estate sector focused on performance and efficiency. Integration with multiple third-party services and messaging for asynchronous processing.",
+          longDescription: "Comprehensive ERP platform for real estate operations, including property management, proposals, sales pipeline, and real-time operational tracking. The system integrates third-party services and asynchronous messaging to keep critical flows fast and reliable, improving productivity and scalability for commercial and back-office teams.",
           image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
           techs: ["C#", "ASP.NET Core", "React", "AWS SQS", "SQL Server"],
           results: "Increased operational efficiency by 35%",
-          link: "#"
+          link: "https://sistema-erp-imobili-rio.vercel.app/clientes"
         },
         {
           title: "Financial & Brokerage Portal",
@@ -691,10 +693,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Sistema ERP Inmobiliario",
           description: "Plataforma de gestión para el sector inmobiliario enfocada en el rendimiento y la eficiencia. Integración con múltiples servicios de terceros y mensajería para procesamiento asíncrono.",
+          longDescription: "Plataforma ERP integral para operaciones inmobiliarias, con gestión de inmuebles, propuestas comerciales, embudo de ventas y seguimiento operativo en tiempo real. El sistema integra servicios de terceros y mensajería asíncrona para sostener alto rendimiento en flujos críticos, elevando la productividad y escalabilidad de equipos comerciales y administrativos.",
           image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=800&auto=format&fit=crop",
           techs: ["C#", "ASP.NET Core", "React", "AWS SQS", "SQL Server"],
           results: "Aumentó la eficiencia operativa en un 35%",
-          link: "#"
+          link: "https://sistema-erp-imobili-rio.vercel.app/clientes"
         },
         {
           title: "Portal Financiero y Corretaje",

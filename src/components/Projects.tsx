@@ -7,7 +7,20 @@ import { useLanguage } from '../contexts/LanguageContext';
 export const Projects = () => {
   const { language, t } = useLanguage();
   const cvData = getCvData(language);
+  type Project = (typeof cvData.projects)[number];
   const [selectedProject, setSelectedProject] = useState<typeof cvData.projects[0] | null>(null);
+  const hasLongDescription = (project: Project): project is Project & { longDescription: string } => 'longDescription' in project;
+  const orderedProjects = cvData.projects
+    .map((project, index) => ({ project, index }))
+    .sort((a, b) => {
+      const aHasLink = a.project.link !== '#';
+      const bHasLink = b.project.link !== '#';
+      if (aHasLink === bHasLink) {
+        return a.index - b.index;
+      }
+      return bHasLink ? 1 : -1;
+    })
+    .map(({ project }) => project);
 
   return (
     <section className="py-24 relative" id="projetos">
@@ -26,7 +39,7 @@ export const Projects = () => {
         </motion.div>
 
         <div className="grid lg:grid-cols-3 gap-8">
-          {cvData.projects.map((project, index) => (
+          {orderedProjects.map((project, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 20 }}
@@ -66,7 +79,7 @@ export const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-200 dark:border-gray-800">
-                  {'longDescription' in project && (
+                  {hasLongDescription(project) && (
                     <button 
                       onClick={() => setSelectedProject(project as typeof cvData.projects[0])}
                       className="flex items-center justify-center gap-2 flex-1 py-2 px-4 rounded-lg bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 text-gray-900 dark:text-white font-medium text-sm transition-colors"
@@ -133,8 +146,8 @@ export const Projects = () => {
                   <div>
                     <h4 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">Visão Geral</h4>
                     <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                      {'longDescription' in selectedProject 
-                        ? (selectedProject as any).longDescription 
+                      {hasLongDescription(selectedProject)
+                        ? selectedProject.longDescription 
                         : selectedProject.description}
                     </p>
                   </div>
