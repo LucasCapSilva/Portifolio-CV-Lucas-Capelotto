@@ -203,10 +203,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Dashboards Educacionais & Analytics",
           description: "Solução de Business Intelligence para empresas de educação, focada em métricas de engajamento, retenção e performance acadêmica. Integração direta com LMS e análise preditiva.",
+          longDescription: "Uma solução abrangente de Business Intelligence voltada para o setor educacional. Este dashboard interativo oferece visualizações detalhadas de métricas de engajamento, retenção de alunos e performance acadêmica. Construído com foco na experiência do usuário, permite a análise preditiva e integração direta com sistemas de gestão de aprendizagem (LMS), facilitando a tomada de decisão estratégica para instituições de ensino.",
           image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
           techs: ["Power BI", "Python", "SQL", "Data Warehouse"],
           results: "Otimização de estratégias pedagógicas baseada em dados",
-          link: "#"
+          link: "https://dashboards-educacionais-analytics.vercel.app"
         },
         {
           title: "Plataforma LMS Escalonável",
@@ -436,10 +437,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Educational Dashboards & Analytics",
           description: "Business Intelligence solution for education companies, focused on engagement, retention, and academic performance metrics. Direct LMS integration and predictive analysis.",
+          longDescription: "A comprehensive Business Intelligence solution tailored for the education sector. This interactive dashboard provides detailed visualizations of engagement metrics, student retention, and academic performance. Built with a focus on user experience, it enables predictive analysis and direct integration with Learning Management Systems (LMS), facilitating strategic decision-making for educational institutions.",
           image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
           techs: ["Power BI", "Python", "SQL", "Data Warehouse"],
           results: "Optimization of pedagogical strategies based on data",
-          link: "#"
+          link: "https://dashboards-educacionais-analytics.vercel.app"
         },
         {
           title: "Scalable LMS Platform",
@@ -669,10 +671,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Dashboards Educativos y Analytics",
           description: "Solución de Business Intelligence para empresas de educación, centrada en métricas de compromiso, retención y rendimiento académico. Integración directa con LMS y análisis predictivo.",
+          longDescription: "Una solución integral de Business Intelligence orientada al sector educativo. Este dashboard interactivo ofrece visualizaciones detalladas de métricas de compromiso, retención de estudiantes y rendimiento académico. Construido con un enfoque en la experiencia del usuario, permite el análisis predictivo y la integración directa con sistemas de gestión de aprendizaje (LMS), facilitando la toma de decisiones estratégicas para las instituciones educativas.",
           image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
           techs: ["Power BI", "Python", "SQL", "Data Warehouse"],
           results: "Optimización de estrategias pedagógicas basadas en datos",
-          link: "#"
+          link: "https://dashboards-educacionais-analytics.vercel.app"
         },
         {
           title: "Plataforma LMS Escalable",
