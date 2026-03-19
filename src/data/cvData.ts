@@ -187,10 +187,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Robô de Busca de Vagas Tech",
           description: "Automação inteligente desenvolvida para auxiliar mais de 2.000 alunos na recolocação profissional. O robô monitora e agrega vagas de tecnologia de múltiplas plataformas como Infojobs, Gupy e LinkedIn.",
+          longDescription: "Uma aplicação web inteligente e white-label projetada para revolucionar a recolocação profissional de desenvolvedores. O sistema analisa currículos em PDF diretamente no navegador, extrai habilidades e experiências, e utiliza um algoritmo de matching avançado para recomendar as vagas mais adequadas ao perfil do candidato. Desenvolvida como uma plataforma SaaS voltada para bootcamps e HR Techs, possui um painel de configurações para customização instantânea da marca, suporte nativo a Dark Mode e animações fluidas.",
           image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
-          techs: ["Python", "Selenium", "Flask", "Pandas"],
+          techs: ["React", "TypeScript", "Vite", "Tailwind CSS", "Zustand"],
           results: "+2.000 alunos impactados em diversas plataformas",
-          link: "#"
+          link: "https://rob-de-busca-de-vagas-tech.vercel.app"
         },
         {
           title: "Plataforma para ONGs de Mulheres",
@@ -421,10 +422,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Tech Job Search Bot",
           description: "Intelligent automation developed to assist over 2,000 students in professional placement. The bot monitors and aggregates tech jobs from multiple platforms like Infojobs, Gupy, and LinkedIn.",
+          longDescription: "A smart, white-label web application designed to revolutionize professional placement for developers. The system analyzes PDF resumes directly in the browser, extracts skills and experiences, and uses an advanced matching algorithm to recommend the most suitable jobs for the candidate's profile. Developed as a SaaS platform for bootcamps and HR Techs, it features a settings panel for instant brand customization, native Dark Mode support, and fluid animations.",
           image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
-          techs: ["Python", "Selenium", "Flask", "Pandas"],
+          techs: ["React", "TypeScript", "Vite", "Tailwind CSS", "Zustand"],
           results: "2,000+ students impacted across multiple platforms",
-          link: "#"
+          link: "https://rob-de-busca-de-vagas-tech.vercel.app"
         },
         {
           title: "Platform for Women's NGOs",
@@ -655,10 +657,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Bot de Búsqueda de Empleo Tech",
           description: "Automatización inteligente desarrollada para ayudar a más de 2.000 estudiantes en la colocación profesional. El bot monitorea y agrega empleos tecnológicos de múltiples plataformas como Infojobs, Gupy y LinkedIn.",
+          longDescription: "Una aplicación web inteligente y white-label diseñada para revolucionar la recolocación profesional de desarrolladores. El sistema analiza currículums en PDF directamente en el navegador, extrae habilidades y experiencias, y utiliza un algoritmo de matching avanzado para recomendar los trabajos más adecuados al perfil del candidato. Desarrollada como una plataforma SaaS para bootcamps y HR Techs, cuenta con un panel de configuración para la personalización instantánea de la marca, soporte nativo para Modo Oscuro y animaciones fluidas.",
           image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?q=80&w=800&auto=format&fit=crop",
-          techs: ["Python", "Selenium", "Flask", "Pandas"],
+          techs: ["React", "TypeScript", "Vite", "Tailwind CSS", "Zustand"],
           results: "+2.000 estudiantes impactados en múltiples plataformas",
-          link: "#"
+          link: "https://rob-de-busca-de-vagas-tech.vercel.app"
         },
         {
           title: "Plataforma para ONGs de Mujeres",
