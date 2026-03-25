@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, ExternalLink, Info } from 'lucide-react';
+import { X, ExternalLink, Info, Github } from 'lucide-react';
 import { getCvData } from '../data/cvData';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -10,9 +10,17 @@ export const Projects = () => {
   type Project = (typeof cvData.projects)[number];
   const [selectedProject, setSelectedProject] = useState<typeof cvData.projects[0] | null>(null);
   const hasLongDescription = (project: Project): project is Project & { longDescription: string } => 'longDescription' in project;
+  const hasGithubLink = (project: Project): project is Project & { githubLink: string } => 'githubLink' in project;
+  const isErpProject = (project: Project) =>
+    /erp imobiliário|real estate erp|erp inmobiliario/i.test(project.title);
   const orderedProjects = cvData.projects
     .map((project, index) => ({ project, index }))
     .sort((a, b) => {
+      const aIsErp = isErpProject(a.project);
+      const bIsErp = isErpProject(b.project);
+      if (aIsErp !== bIsErp) {
+        return aIsErp ? -1 : 1;
+      }
       const aHasLink = a.project.link !== '#';
       const bHasLink = b.project.link !== '#';
       if (aHasLink === bHasLink) {
@@ -79,6 +87,17 @@ export const Projects = () => {
                 </div>
 
                 <div className="flex items-center gap-3 mt-auto pt-4 border-t border-gray-200 dark:border-gray-800">
+                  {hasGithubLink(project) && (
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`Acessar repositório GitHub de ${project.title}`}
+                      className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gray-100 text-gray-700 transition-colors hover:bg-gray-200 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700"
+                    >
+                      <Github size={16} />
+                    </a>
+                  )}
                   {hasLongDescription(project) && (
                     <button 
                       onClick={() => setSelectedProject(project as typeof cvData.projects[0])}
