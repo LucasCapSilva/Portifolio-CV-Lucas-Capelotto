@@ -208,7 +208,8 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
           techs: ["Java", "Spring Boot", "Power BI", "SQL", "Data Warehouse"],
           results: "Otimização de estratégias pedagógicas baseada em dados",
-          link: "https://dashboards-educacionais-analytics.vercel.app"
+          link: "https://dashboards-educacionais-analytics.vercel.app",
+          githubLink: "https://github.com/LucasCapSilva/DashboardsEducacionais-Analytics"
         },
         {
           title: "Plataforma LMS Escalonável",
@@ -445,7 +446,8 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
           techs: ["Java", "Spring Boot", "Power BI", "SQL", "Data Warehouse"],
           results: "Optimization of pedagogical strategies based on data",
-          link: "https://dashboards-educacionais-analytics.vercel.app"
+          link: "https://dashboards-educacionais-analytics.vercel.app",
+          githubLink: "https://github.com/LucasCapSilva/DashboardsEducacionais-Analytics"
         },
         {
           title: "Scalable LMS Platform",
@@ -682,7 +684,8 @@ export const getCvData = (lang: Language = 'pt') => {
           image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
           techs: ["Java", "Spring Boot", "Power BI", "SQL", "Data Warehouse"],
           results: "Optimización de estrategias pedagógicas basadas en datos",
-          link: "https://dashboards-educacionais-analytics.vercel.app"
+          link: "https://dashboards-educacionais-analytics.vercel.app",
+          githubLink: "https://github.com/LucasCapSilva/DashboardsEducacionais-Analytics"
         },
         {
           title: "Plataforma LMS Escalable",
