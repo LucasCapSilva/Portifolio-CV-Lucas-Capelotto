@@ -214,10 +214,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Plataforma LMS Escalonável",
           description: "Sistema de gerenciamento de aprendizagem (LMS) desenvolvido do zero, atendendo mais de 2.200 usuários. Inclui streaming de vídeo, correção de exercícios baseada em IA e monitoramento de progresso.",
+          longDescription: "Uma plataforma LMS robusta desenvolvida para escalar operação acadêmica com foco em performance, experiência de uso e gestão completa do ciclo de aprendizagem. O sistema contempla trilhas de estudo, controle de progresso, biblioteca de conteúdos, streaming de vídeo, avaliações online e acompanhamento de indicadores em tempo real para coordenadores e instrutores.",
           image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
           techs: ["React", "Java", "Spring Boot", "Docker", "Kubernetes"],
           results: "Suportou pico de acessos com 99.9% de uptime",
-          link: "#"
+          link: "https://nerdcodeflix.com.br"
         },
         {
           title: "Sistema ERP Imobiliário",
@@ -452,10 +453,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Scalable LMS Platform",
           description: "Learning Management System (LMS) developed from scratch, serving over 2,200 users. Includes video streaming, AI-based exercise correction, and progress monitoring.",
+          longDescription: "A robust LMS platform built to scale academic operations with high performance, smooth UX, and complete learning lifecycle management. The system includes learning paths, progress tracking, content library, video streaming, online assessments, and real-time academic KPIs for coordinators and instructors.",
           image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
           techs: ["React", "Java", "Spring Boot", "Docker", "Kubernetes"],
           results: "Supported traffic peaks with 99.9% uptime",
-          link: "#"
+          link: "https://nerdcodeflix.com.br"
         },
         {
           title: "Real Estate ERP System",
@@ -690,10 +692,11 @@ export const getCvData = (lang: Language = 'pt') => {
         {
           title: "Plataforma LMS Escalable",
           description: "Sistema de gestión de aprendizaje (LMS) desarrollado desde cero, atendiendo a más de 2.200 usuarios. Incluye streaming de video, corrección de ejercicios basada en IA y monitoreo de progreso.",
+          longDescription: "Una plataforma LMS robusta desarrollada para escalar la operación académica con foco en rendimiento, experiencia de usuario y gestión integral del ciclo de aprendizaje. El sistema incluye rutas de aprendizaje, seguimiento de progreso, biblioteca de contenidos, streaming de video, evaluaciones en línea y métricas académicas en tiempo real para coordinadores e instructores.",
           image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=800&auto=format&fit=crop",
           techs: ["React", "Java", "Spring Boot", "Docker", "Kubernetes"],
           results: "Soportó picos de tráfico con un 99.9% de tiempo de actividad",
-          link: "#"
+          link: "https://nerdcodeflix.com.br"
         },
         {
           title: "Sistema ERP Inmobiliario",

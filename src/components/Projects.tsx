@@ -15,6 +15,8 @@ export const Projects = () => {
     /erp imobiliário|real estate erp|erp inmobiliario/i.test(project.title);
   const isDashboardProject = (project: Project) =>
     /dashboards educacionais|educational dashboards|dashboards educativos/i.test(project.title);
+  const isLmsProject = (project: Project) =>
+    /plataforma lms escalonável|scalable lms platform|plataforma lms escalable/i.test(project.title);
   const orderedProjects = cvData.projects
     .map((project, index) => ({ project, index }))
     .sort((a, b) => {
@@ -27,6 +29,11 @@ export const Projects = () => {
       const bIsDashboard = isDashboardProject(b.project);
       if (aIsDashboard !== bIsDashboard) {
         return aIsDashboard ? -1 : 1;
+      }
+      const aIsLms = isLmsProject(a.project);
+      const bIsLms = isLmsProject(b.project);
+      if (aIsLms !== bIsLms) {
+        return aIsLms ? -1 : 1;
       }
       const aHasLink = a.project.link !== '#';
       const bHasLink = b.project.link !== '#';
