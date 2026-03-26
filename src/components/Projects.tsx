@@ -17,6 +17,8 @@ export const Projects = () => {
     /dashboards educacionais|educational dashboards|dashboards educativos/i.test(project.title);
   const isLmsProject = (project: Project) =>
     /plataforma lms escalonável|scalable lms platform|plataforma lms escalable/i.test(project.title);
+  const isFinancialProject = (project: Project) =>
+    /portal financeiro & corretagem|financial & brokerage portal|portal financiero y corretaje/i.test(project.title);
   const orderedProjects = cvData.projects
     .map((project, index) => ({ project, index }))
     .sort((a, b) => {
@@ -34,6 +36,11 @@ export const Projects = () => {
       const bIsLms = isLmsProject(b.project);
       if (aIsLms !== bIsLms) {
         return aIsLms ? -1 : 1;
+      }
+      const aIsFinancial = isFinancialProject(a.project);
+      const bIsFinancial = isFinancialProject(b.project);
+      if (aIsFinancial !== bIsFinancial) {
+        return aIsFinancial ? -1 : 1;
       }
       const aHasLink = a.project.link !== '#';
       const bHasLink = b.project.link !== '#';
