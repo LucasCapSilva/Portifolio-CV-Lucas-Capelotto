@@ -18,7 +18,13 @@ export const Footer = () => {
             <a href="#" className="text-2xl font-bold font-heading tracking-tighter text-gradient block mb-2">
               LCS.
             </a>
-            <p className="text-sm text-gray-500 dark:text-gray-400">
+            <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+              {cvData.personalInfo.legalName}
+            </p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+              CPF/CNPJ: {cvData.personalInfo.cnpj} • Endereço: {cvData.personalInfo.address}
+            </p>
+            <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
               © {new Date().getFullYear()} {cvData.personalInfo.name}. {t.footer.rights}
             </p>
           </div>

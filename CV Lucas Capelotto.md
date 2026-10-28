@@ -1,8 +1,10 @@
 # Lucas Capelotto da Silva
 **Desenvolvedor Full Stack | Arquiteto de Software | Instrutor**
 
-📍 São Paulo - Brasil  
-📧 sid_cap@hotmail.com  
+🏢 Razão Social / Nome: LUCAS CAPELOTTO DA SILVA 42113158892
+📄 CPF/CNPJ: 35.436.970/0001-19
+📍 Endereço: R HEITOR 00205 - ITAQUERA - CEP: 08210-160  
+📧 lcapelotto@gmail.com  
 🔗 LinkedIn: https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a  
 💻 GitHub: https://github.com/LucasCapSilva  
 

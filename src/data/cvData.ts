@@ -5,9 +5,12 @@ export const getCvData = (lang: Language = 'pt') => {
     pt: {
       personalInfo: {
         name: "Lucas Capelotto da Silva",
+        legalName: "LUCAS CAPELOTTO DA SILVA 42113158892",
+        cnpj: "35.436.970/0001-19",
+        address: "R HEITOR 00205 - ITAQUERA - CEP: 08210-160",
         title: "Senior Full Stack Developer",
         location: "São Paulo - Brasil",
-        email: "sid_cap@hotmail.com",
+        email: "lcapelotto@gmail.com",
         whatsapp: "5511932147070",
         linkedin: "https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a",
         github: "https://github.com/LucasCapSilva",
@@ -245,9 +248,12 @@ export const getCvData = (lang: Language = 'pt') => {
     en: {
       personalInfo: {
         name: "Lucas Capelotto da Silva",
+        legalName: "LUCAS CAPELOTTO DA SILVA 42113158892",
+        cnpj: "35.436.970/0001-19",
+        address: "R HEITOR 00205 - ITAQUERA - CEP: 08210-160",
         title: "Senior Full Stack Developer",
         location: "São Paulo - Brazil",
-        email: "sid_cap@hotmail.com",
+        email: "lcapelotto@gmail.com",
         whatsapp: "5511932147070",
         linkedin: "https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a",
         github: "https://github.com/LucasCapSilva",
@@ -485,9 +491,12 @@ export const getCvData = (lang: Language = 'pt') => {
     es: {
       personalInfo: {
         name: "Lucas Capelotto da Silva",
+        legalName: "LUCAS CAPELOTTO DA SILVA 42113158892",
+        cnpj: "35.436.970/0001-19",
+        address: "R HEITOR 00205 - ITAQUERA - CEP: 08210-160",
         title: "Senior Full Stack Developer",
         location: "São Paulo - Brasil",
-        email: "sid_cap@hotmail.com",
+        email: "lcapelotto@gmail.com",
         whatsapp: "5511932147070",
         linkedin: "https://www.linkedin.com/in/lucas-capelotto-da-silva-43b26216a",
         github: "https://github.com/LucasCapSilva",
